@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>College Football</title>
 
-  <!-- ESPN-style Google Fonts -->
+  <!-- ESPN-style Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
   <!-- HEADER -->
   <div class="section header">
     <h1>College Football</h1>
-    <p class="subtitle">Highlights, passion, and data-driven insights</p>
+    <p class="subtitle">The passion, energy, and data behind America’s game</p>
 
     <p class="nav">
       <a href="index.html">Back to Home</a> |
@@ -45,24 +45,28 @@
     </ol>
   </div>
 
-  <!-- IMAGE SECTION -->
+  <!-- HYPE SECTION -->
   <div class="section">
-    <h2>College Football Fan Experience</h2>
-    <img src="cfb.jpg" alt="College football crowd and celebration">
-  </div>
+    <h2>The Hype of College Football</h2>
 
-  <!-- VIDEO SECTION -->
-  <div class="section" id="video">
-    <h2>College Football Highlights</h2>
+    <div class="hype-grid">
+      <!-- IMAGE -->
+      <div class="hype-item">
+        <img src="cfb.jpg" alt="College football crowd and celebration">
+      </div>
 
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/T7c1w4_8BsE?si=mwdb-f_GtjsG-8e7"
-        title="College Football Highlights"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+      <!-- VIDEO -->
+      <div class="hype-item" id="video">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/T7c1w4_8BsE?si=mwdb-f_GtjsG-8e7"
+            title="College Football Highlights"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -70,45 +74,31 @@
   <div class="section">
     <h2>College Football Data & Statistics</h2>
 
-    <div class='tableauPlaceholder' id='viz1765825146883' style='position: relative'>
+    <div class="tableauPlaceholder" id="viz1765825146883" style="position: relative">
       <noscript>
-        <a href='#'>
-          <img alt='College Football Analytics'
-            src='https://public.tableau.com/static/images/QN/QNT3M3TKF/1_rss.png'
-            style='border: none' />
+        <a href="#">
+          <img alt="College Football Analytics"
+               src="https://public.tableau.com/static/images/QN/QNT3M3TKF/1_rss.png"
+               style="border:none;">
         </a>
       </noscript>
-      <object class='tableauViz' style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' />
-        <param name='path' value='shared/QNT3M3TKF' />
-        <param name='toolbar' value='yes' />
-        <param name='static_image'
-          value='https://public.tableau.com/static/images/QN/QNT3M3TKF/1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-        <param name='language' value='en-US' />
+
+      <object class="tableauViz" style="display:none;">
+        <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+        <param name="embed_code_version" value="3" />
+        <param name="path" value="shared/QNT3M3TKF" />
+        <param name="toolbar" value="yes" />
+        <param name="language" value="en-US" />
       </object>
     </div>
 
-    <script type='text/javascript'>
-      var divElement = document.getElementById('viz1765825146883');
-      var vizElement = divElement.getElementsByTagName('object')[0];
-      if (divElement.offsetWidth > 800) {
-        vizElement.style.width = '100%';
-        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-      } else if (divElement.offsetWidth > 500) {
-        vizElement.style.width = '100%';
-        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-      } else {
-        vizElement.style.width = '100%';
-        vizElement.style.height = '1827px';
-      }
-      var scriptElement = document.createElement('script');
-      scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    <script type="text/javascript">
+      var divElement = document.getElementById("viz1765825146883");
+      var vizElement = divElement.getElementsByTagName("object")[0];
+      vizElement.style.width = "100%";
+      vizElement.style.height = "600px";
+      var scriptElement = document.createElement("script");
+      scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
       vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
   </div>
