@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #eef;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Number Guessing Game</h1>
+    <p>I am thinking of a number between 1 and 10.</p>
+
+    <input type="number" id="guess">
+    <button onclick="checkGuess()">Guess</button>
+
+    <p id="result"></p>
+
+    <a href="scratch.html">Back to Scratch Page</a>
+
+    <script>
+        let secretNumber = Math.floor(Math.random() * 10) + 1;
+
+        function checkGuess() {
+            let userGuess = document.getElementById("guess").value;
+
+            if (userGuess == secretNumber) {
+                document.getElementById("result").innerHTML =
+                    "Correct! You guessed the number!";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Wrong! Try again.";
+            }
+        }
+    </script>
+
+</body>
+</html>
