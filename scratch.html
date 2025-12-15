@@ -5,19 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>College Football</title>
 
+  <!-- ESPN-style Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- PAGE HEADER -->
-  <div class="section">
+  <!-- HEADER -->
+  <div class="section header">
     <h1>College Football</h1>
-    <p>Why college football is my favorite sport</p>
+    <p class="subtitle">Highlights, passion, and data-driven insights</p>
 
-    <!-- Navigation -->
-    <p>
+    <p class="nav">
       <a href="index.html">Back to Home</a> |
       <a href="app.html">My Web App</a> |
       <a href="#video">Jump to Video</a>
@@ -43,29 +47,29 @@
 
   <!-- IMAGE SECTION -->
   <div class="section">
-    <h2>College Football</h2>
-    <img src="cfb.jpg" alt="College football celebration">
-
+    <h2>College Football Fan Experience</h2>
+    <img src="cfb.jpg" alt="College football crowd and celebration">
   </div>
 
-  <!-- VIDEO SECTION WITH ANCHOR -->
+  <!-- VIDEO SECTION -->
   <div class="section" id="video">
     <h2>College Football Highlights</h2>
 
-    <iframe width="560" height="315"
-      src="https://www.youtube.com/embed/2j5rM9jEDjM"
-      title="College Football Highlights"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/T7c1w4_8BsE?si=mwdb-f_GtjsG-8e7"
+        title="College Football Highlights"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 
   <!-- TABLEAU SECTION -->
   <div class="section">
     <h2>College Football Data & Statistics</h2>
 
-    <!-- Tableau Embed -->
     <div class='tableauPlaceholder' id='viz1765825146883' style='position: relative'>
       <noscript>
         <a href='#'>
@@ -107,7 +111,6 @@
       scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
       vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
-
   </div>
 
 </body>
