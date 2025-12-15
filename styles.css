@@ -1,29 +1,33 @@
 /* ===== GLOBAL ===== */
 body {
-  background-color: #121212; /* ESPN dark background */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #121212;
+  font-family: "Inter", Arial, sans-serif;
   color: #eaeaea;
   margin: 0;
   padding: 40px;
 }
 
-/* ===== HEADINGS ===== */
+/* ===== ESPN HEADLINES ===== */
 h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   margin-bottom: 6px;
   color: #ffffff;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
   margin-bottom: 12px;
   color: #ffffff;
+  text-transform: uppercase;
 }
 
-/* ===== NAV / LINKS ===== */
+/* ===== LINKS ===== */
 a {
   color: #d00; /* ESPN red */
   text-decoration: none;
@@ -36,40 +40,24 @@ a:hover {
 
 /* ===== SECTION CARDS ===== */
 .section {
-  background-color: #1f1f1f; /* ESPN card background */
+  background-color: #1f1f1f;
   padding: 28px;
   margin-bottom: 32px;
   border-radius: 6px;
   border-top: 4px solid #d00;
 }
 
-/* ===== TEXT ===== */
-p {
-  color: #cfcfcf;
+/* ===== BODY TEXT ===== */
+p, li {
+  font-family: "Inter", Arial, sans-serif;
   line-height: 1.6;
+  color: #cfcfcf;
 }
 
-/* ===== LISTS ===== */
-ol {
-  margin-left: 20px;
-}
-
-ul {
-  margin-top: 8px;
-  margin-left: 18px;
-}
-
-/* ===== IMAGE ===== */
-img {
+/* ===== MEDIA ===== */
+img, iframe {
   margin-top: 16px;
   max-width: 100%;
-  border-radius: 4px;
-  border: 1px solid #333;
-}
-
-/* ===== VIDEO ===== */
-iframe {
-  margin-top: 16px;
   border-radius: 4px;
   border: 1px solid #333;
 }
