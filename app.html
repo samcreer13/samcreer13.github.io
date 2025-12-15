@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Styles (kept in this file per requirement) -->
   <style>
     body {
       background-color: #121212;
@@ -26,55 +25,18 @@
       margin-bottom: 32px;
       border-radius: 6px;
       border-top: 4px solid #d00;
-      max-width: 700px;
+      max-width: 760px;
     }
 
     h1 {
       font-family: "Oswald", Arial, sans-serif;
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       text-transform: uppercase;
     }
 
     h2 {
       font-family: "Oswald", Arial, sans-serif;
       font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-
-    button {
-      background-color: #d00;
-      color: #fff;
-      border: none;
-      padding: 12px 18px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      font-size: 1rem;
-      margin-top: 10px;
-      border-radius: 4px;
-      border: none;
-    }
-
-    .hint {
-      color: #cfcfcf;
-      margin-top: 10px;
-      font-size: 0.95rem;
-    }
-
-    .result {
-      font-weight: 600;
-      margin-top: 12px;
     }
 
     .nav a {
@@ -83,8 +45,48 @@
       font-weight: 700;
     }
 
-    .nav a:hover {
-      text-decoration: underline;
+    .score {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      width: 120px;
+      display: none;
+      margin: 18px auto;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    button {
+      background-color: #d00;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 12px;
+      margin-right: 6px;
+    }
+
+    .hint {
+      margin-top: 12px;
+      color: #cfcfcf;
+    }
+
+    .result {
+      margin-top: 12px;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -94,16 +96,18 @@
   <!-- HEADER -->
   <div class="section">
     <h1>Guess the College Football Team</h1>
-    <p class="nav">
-      <a href="index.html">Back to Home</a>
-    </p>
+    <p class="nav"><a href="index.html">Back to Home</a></p>
   </div>
 
   <!-- GAME -->
   <div class="section">
+    <div class="score">Score: <span id="score">0</span></div>
+
     <h2>Can You Guess the Team?</h2>
 
     <p class="hint" id="hint"></p>
+
+    <img id="logo" class="logo" alt="Team Logo">
 
     <input type="text" id="guess" placeholder="Enter team name">
 
@@ -113,37 +117,104 @@
     <p class="result" id="result"></p>
   </div>
 
-  <!-- SCRIPT -->
   <script>
     const teams = [
-      { team: "BYU", hint: "Independent for years before joining the Big 12" },
-      { team: "Alabama", hint: "Nick Saban built a dynasty here" },
-      { team: "Ohio State", hint: "Known for the Horseshoe stadium" },
-      { team: "Georgia", hint: "Back-to-back national champions in the 2020s" },
-      { team: "Michigan", hint: "The Big House is the largest stadium in the U.S." },
-      { team: "Texas", hint: "Famous for the phrase 'Texas is back'" }
+      {
+        team: "BYU",
+        hint: "Big 12 team that was independent for many years",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/4/4a/BYU_Cougars_logo.svg"
+      },
+      {
+        team: "Utah",
+        hint: "Big 12 program known as the Utes with a strong defensive identity",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Utah_Utes_logo.svg"
+      },
+      {
+        team: "Alabama",
+        hint: "SEC powerhouse with multiple national titles under Nick Saban",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alabama_Crimson_Tide_logo.svg"
+      },
+      {
+        team: "Georgia",
+        hint: "SEC team known for elite defense and recent championships",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Georgia_Bulldogs_logo.svg"
+      },
+      {
+        team: "South Carolina",
+        hint: "SEC team nicknamed the Gamecocks",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/South_Carolina_Gamecocks_logo.svg"
+      },
+      {
+        team: "Michigan",
+        hint: "Big Ten team that plays in the largest stadium in the U.S.",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Michigan_Wolverines_logo.svg"
+      },
+      {
+        team: "Ohio State",
+        hint: "Big Ten contender nicknamed the Buckeyes",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Ohio_State_Buckeyes_logo.svg"
+      },
+      {
+        team: "Indiana",
+        hint: "Big Ten program known as the Hoosiers",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Indiana_Hoosiers_logo.svg"
+      },
+      {
+        team: "Texas",
+        hint: "SEC-bound program known for the phrase 'Texas is back'",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Texas_Longhorns_logo.svg"
+      },
+      {
+        team: "Texas Tech",
+        hint: "Big 12 program known for high-powered passing offenses",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Texas_Tech_Red_Raiders_logo.svg"
+      },
+      {
+        team: "Oregon",
+        hint: "Former Pac-12 powerhouse famous for flashy uniforms",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Oregon_Ducks_logo.svg"
+      },
+      {
+        team: "USC",
+        hint: "Former Pac-12 team now competing in the Big Ten",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/8/8d/USC_Trojans_logo.svg"
+      },
+      {
+        team: "Notre Dame",
+        hint: "Historic independent program with a golden helmet",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Notre_Dame_Fighting_Irish_logo.svg"
+      }
     ];
 
     let currentTeam = {};
+    let score = 0;
 
     function newTeam() {
       currentTeam = teams[Math.floor(Math.random() * teams.length)];
       document.getElementById("hint").textContent = "Hint: " + currentTeam.hint;
       document.getElementById("result").textContent = "";
       document.getElementById("guess").value = "";
+      document.getElementById("logo").style.display = "none";
     }
 
     function checkGuess() {
-      const userGuess = document.getElementById("guess").value.trim().toLowerCase();
+      const guess = document.getElementById("guess").value.trim().toLowerCase();
 
-      if (userGuess === currentTeam.team.toLowerCase()) {
-        document.getElementById("result").textContent = "✅ Correct! The team is " + currentTeam.team + ".";
+      if (guess === currentTeam.team.toLowerCase()) {
+        score++;
+        document.getElementById("score").textContent = score;
+        document.getElementById("result").textContent =
+          "✅ Correct! The team is " + currentTeam.team + ".";
+        const logo = document.getElementById("logo");
+        logo.src = currentTeam.logo;
+        logo.style.display = "block";
       } else {
-        document.getElementById("result").textContent = "❌ Not quite. Try again!";
+        document.getElementById("result").textContent =
+          "❌ Incorrect. Try again!";
       }
     }
 
-    // Load first team on page load
+    // Start game
     newTeam();
   </script>
 
