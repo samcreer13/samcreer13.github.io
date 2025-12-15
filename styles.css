@@ -1,8 +1,8 @@
 /* ===== GLOBAL ===== */
 body {
-  background-color: #0f172a; /* deep navy */
+  background-color: #121212; /* ESPN dark background */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-color: #e5e7eb;
+  color: #eaeaea;
   margin: 0;
   padding: 40px;
 }
@@ -11,21 +11,21 @@ color: #e5e7eb;
 h1 {
   font-size: 2.8rem;
   font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
   color: #ffffff;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #facc15; /* ESPN-style gold accent */
+  color: #ffffff;
 }
 
-/* ===== LINKS / NAV ===== */
+/* ===== NAV / LINKS ===== */
 a {
-  color: #ef4444; /* SportsCenter red */
+  color: #d00; /* ESPN red */
   text-decoration: none;
   font-weight: 700;
 }
@@ -34,45 +34,50 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== CONTENT SECTIONS ===== */
+/* ===== SECTION CARDS ===== */
 .section {
-  background-color: #020617; /* almost black */
+  background-color: #1f1f1f; /* ESPN card background */
   padding: 28px;
   margin-bottom: 32px;
-  border-radius: 14px;
-  border: 1px solid #1e293b;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  border-top: 4px solid #d00;
+}
+
+/* ===== TEXT ===== */
+p {
+  color: #cfcfcf;
+  line-height: 1.6;
 }
 
 /* ===== LISTS ===== */
 ol {
-  margin-left: 22px;
+  margin-left: 20px;
 }
 
 ul {
   margin-top: 8px;
-  margin-left: 20px;
+  margin-left: 18px;
 }
 
 /* ===== IMAGE ===== */
 img {
   margin-top: 16px;
   max-width: 100%;
-  border-radius: 14px;
-  border: 3px solid #1e293b;
+  border-radius: 4px;
+  border: 1px solid #333;
 }
 
 /* ===== VIDEO ===== */
 iframe {
   margin-top: 16px;
-  border-radius: 14px;
-  border: 3px solid #1e293b;
+  border-radius: 4px;
+  border: 1px solid #333;
 }
 
 /* ===== TABLEAU ===== */
 .tableauPlaceholder {
   margin-top: 20px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 3px solid #1e293b;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background-color: #000;
 }
