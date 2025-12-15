@@ -1,10 +1,8 @@
 /* ===== GLOBAL ===== */
 body {
-  background-color: red;
-}
-
+  background-color: #0f172a; /* deep navy */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #e5e7eb;
+color: #e5e7eb;
   margin: 0;
   padding: 40px;
 }
