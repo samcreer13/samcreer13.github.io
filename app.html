@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess the College Football Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles (kept in this file per requirement) -->
+  <style>
+    body {
+      background-color: #121212;
+      font-family: "Inter", Arial, sans-serif;
+      color: #eaeaea;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .section {
+      background-color: #1f1f1f;
+      padding: 28px;
+      margin-bottom: 32px;
+      border-radius: 6px;
+      border-top: 4px solid #d00;
+      max-width: 700px;
+    }
+
+    h1 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: "Oswald", Arial, sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #d00;
+      color: #fff;
+      border: none;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .hint {
+      color: #cfcfcf;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    .result {
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    .nav a {
+      color: #d00;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="section">
+    <h1>Guess the College Football Team</h1>
+    <p class="nav">
+      <a href="index.html">Back to Home</a>
+    </p>
+  </div>
+
+  <!-- GAME -->
+  <div class="section">
+    <h2>Can You Guess the Team?</h2>
+
+    <p class="hint" id="hint"></p>
+
+    <input type="text" id="guess" placeholder="Enter team name">
+
+    <button onclick="checkGuess()">Submit Guess</button>
+    <button onclick="newTeam()">New Team</button>
+
+    <p class="result" id="result"></p>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const teams = [
+      { team: "BYU", hint: "Independent for years before joining the Big 12" },
+      { team: "Alabama", hint: "Nick Saban built a dynasty here" },
+      { team: "Ohio State", hint: "Known for the Horseshoe stadium" },
+      { team: "Georgia", hint: "Back-to-back national champions in the 2020s" },
+      { team: "Michigan", hint: "The Big House is the largest stadium in the U.S." },
+      { team: "Texas", hint: "Famous for the phrase 'Texas is back'" }
+    ];
+
+    let currentTeam = {};
+
+    function newTeam() {
+      currentTeam = teams[Math.floor(Math.random() * teams.length)];
+      document.getElementById("hint").textContent = "Hint: " + currentTeam.hint;
+      document.getElementById("result").textContent = "";
+      document.getElementById("guess").value = "";
+    }
+
+    function checkGuess() {
+      const userGuess = document.getElementById("guess").value.trim().toLowerCase();
+
+      if (userGuess === currentTeam.team.toLowerCase()) {
+        document.getElementById("result").textContent = "✅ Correct! The team is " + currentTeam.team + ".";
+      } else {
+        document.getElementById("result").textContent = "❌ Not quite. Try again!";
+      }
+    }
+
+    // Load first team on page load
+    newTeam();
+  </script>
+
+</body>
+</html>
