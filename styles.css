@@ -1,6 +1,8 @@
 /* ===== GLOBAL ===== */
 body {
-  background-color: #0f172a; /* deep navy */
+  background-color: red;
+}
+
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #e5e7eb;
   margin: 0;
